@@ -45,12 +45,10 @@ class GradientContainer extends StatelessWidget {
               },
               style: OutlinedButton.styleFrom(
                 shape: const RoundedRectangleBorder(),
+                foregroundColor: Colors.white,
               ),
               child: const Text(
                 'Start Quiz',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
               ),
             ),
           ],
