@@ -4,7 +4,9 @@ import 'package:second_app/fancy_answer_button.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({super.key, required this.onSelectAnswer});
+
+  final void Function(String) onSelectAnswer;
 
   @override
   State<QuestionsScreen> createState() => _QuestionsScreenState();
@@ -13,7 +15,9 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion() {
+  void answerQuestion(String answer) {
+    widget.onSelectAnswer(answer);
+
     setState(() {
       currentQuestionIndex++;
     });
@@ -36,6 +40,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               // style: GoogleFonts.lato(
               style: const TextStyle(
                 fontSize: 24,
+                fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
@@ -44,7 +49,11 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             ),
             // Note: ... unwraps the list (i.e. extend)
             ...currentQuestion.getShuffledAnswers().map((answer) {
-              return FancyAnswerButton(text: answer, onTap: answerQuestion);
+              return FancyAnswerButton(
+                  text: answer,
+                  onTap: () {
+                    answerQuestion(answer);
+                  });
             }),
             // Alternative to map:
             // for (var answer in currentQuestion.answers)
