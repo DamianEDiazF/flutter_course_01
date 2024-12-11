@@ -35,6 +35,7 @@ class _QuizState extends State<Quiz> {
   }
 
   void restartQuiz() {
+    _selectedAnswers.clear();
     setState(() {
       _activeScreen = 'questions-screen';
     });
