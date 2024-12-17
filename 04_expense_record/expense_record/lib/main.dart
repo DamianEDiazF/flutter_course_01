@@ -11,7 +11,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       theme: ThemeData().copyWith(
         colorScheme: kColorScheme,
-        appBarTheme: AppBarTheme().copyWith(
+        appBarTheme: const AppBarTheme().copyWith(
             backgroundColor: kColorScheme.onPrimaryContainer,
             foregroundColor: kColorScheme.primaryContainer),
         cardTheme: const CardTheme().copyWith(
@@ -31,9 +31,9 @@ void main() {
               ),
             ),
       ),
-      darkTheme: ThemeData().copyWith(
+      darkTheme: ThemeData.dark().copyWith(
         colorScheme: kColorSchemeDark,
-        appBarTheme: AppBarTheme().copyWith(
+        appBarTheme: const AppBarTheme().copyWith(
             backgroundColor: kColorSchemeDark.onPrimaryContainer,
             foregroundColor: kColorSchemeDark.primaryContainer),
         cardTheme: const CardTheme().copyWith(
@@ -53,7 +53,7 @@ void main() {
               ),
             ),
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       home: const Expenses(),
     ),
   );
