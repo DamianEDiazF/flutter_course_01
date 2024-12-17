@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:expense_record/widgets/expenses.dart';
+// import 'package:flutter/services.dart';
 
 var kColorScheme = ColorScheme.fromSeed(seedColor: Colors.purple);
 var kColorSchemeDark =
     ColorScheme.fromSeed(brightness: Brightness.dark, seedColor: Colors.purple);
 
 void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  // ]).then((fn) {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -57,4 +62,5 @@ void main() {
       home: const Expenses(),
     ),
   );
+  // });
 }
