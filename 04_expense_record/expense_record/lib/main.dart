@@ -50,7 +50,7 @@ void main() {
             backgroundColor: kColorSchemeDark.primaryContainer,
           ),
         ),
-        textTheme: ThemeData().textTheme.copyWith(
+        textTheme: ThemeData.dark().textTheme.copyWith(
               titleLarge: TextStyle(
                 fontWeight: FontWeight.normal,
                 color: kColorSchemeDark.onSecondaryContainer,
